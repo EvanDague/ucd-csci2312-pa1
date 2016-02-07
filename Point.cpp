@@ -9,6 +9,9 @@ Point::Point(){
     z = 0;
 }
 Point::Point(double x, double y, double z){
+    x = x;
+    y = y;
+    z = z;
 }
 
 // Mutator methods
