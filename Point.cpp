@@ -1,17 +1,19 @@
 #include <cmath>
 #include <iostream>
-#include <Point.h>
+#include "Point.h"
 
 // Constructors
-Point::Point(){
-    x = 0;
-    y = 0;
-    z = 0;
+Point::Point() :
+    x(0), y(0), z(0)
+{
 }
-Point::Point(double x, double y, double z){
-    x = x;
-    y = y;
-    z = z;
+Point::Point(double x, double y, double z) :
+    x(x), y(y), z(z)
+{
+}
+
+Point::~Point(){
+    
 }
 
 // Mutator methods
@@ -37,10 +39,10 @@ double Point::getZ() const{
 }
 
 // Distance function
-double Point::distanceTo(const Point& a, const Point& b) const{
-    double xdist = a.getx() - b.getx();
-    double ydist = a.gety() - b.gety();
-    double zdist = a.getz() - b.getz();
+double Point::distanceTo(const Point& a) const{
+    double xdist = a.getX() - this->getX();
+    double ydist = a.getY() - this->getY();
+    double zdist = a.getZ() - this->getZ();
     
     double dist1, dist2;
     dist1 = sqrt(xdist*xdist + ydist*ydist);
